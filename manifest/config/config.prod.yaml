@@ -1,0 +1,33 @@
+server:
+  address:     ":8080"
+  openapiPath: "/api.json"
+  swaggerPath: "/swagger"
+
+database:
+  logger:
+    stdoutColorDisabled: false
+    writerColorEnable: false
+    level: "all"
+    stdout: true
+  default:
+    link: "pgsql:postgres:xxxxxxxx@tcp(127.0.0.1:5432)/postgres"
+
+redis:
+  default:
+    address: 127.0.0.1:6379
+    db: 0
+    pass: xxxxxxxx
+    idleTimeout: 600
+
+logger:
+  stdoutColorDisabled: false # 是否关闭终端的颜色打印。默认否，表示终端的颜色输出。
+  writerColorEnable: false # 是否开启Writer的颜色打印。默认否，表示不输出颜色到自定义的Writer或者文件。
+  level : "all"
+  stdout: true
+
+tencent:
+  secretID: xxxxxxxxxxx
+  secretKey: xxxxxxxxxxx
+  cosBuketName: xxxxxxxxx
+  cosAppID: xxxxxxxxx
+  cosRegion: ap-chengdu

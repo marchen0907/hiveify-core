@@ -36,7 +36,32 @@ func GetCredential() (Credential, error) {
 		Policy: &sts.CredentialPolicy{
 			Statement: []sts.CredentialPolicyStatement{
 				{
-					Action: []string{"*"},
+					// 密钥的权限列表，具体权限列表请看 https://cloud.tencent.com/document/product/436/31923
+					Action: []string{
+						//简单上传操作
+						"name/cos:PutObject",
+						//表单上传对象
+						"name/cos:PostObject",
+
+						//分块上传：初始化分块操作
+						"name/cos:InitiateMultipartUpload",
+						//分块上传：List 进行中的分块上传
+						"name/cos:ListMultipartUploads",
+						//分块上传：List 已上传分块操作
+						"name/cos:ListParts",
+						//分块上传：上传分块操作
+						"name/cos:UploadPart",
+						//分块上传：完成所有分块上传操作
+						"name/cos:CompleteMultipartUpload",
+						//取消分块上传操作
+						"name/cos:AbortMultipartUpload",
+
+						//追加上传对象
+						"name/cos:AppendObject",
+
+						//下载操作
+						"name/cos:GetObject",
+					},
 					Effect: "allow",
 					Resource: []string{
 						//这里改成允许的路径前缀，可以根据自己网站的用户登录态判断允许上传的具体路径，

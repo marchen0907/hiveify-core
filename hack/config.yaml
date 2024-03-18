@@ -1,0 +1,12 @@
+
+# CLI tool, only in development environment.
+# https://goframe.org/pages/viewpage.action?pageId=3673173
+gfcli:
+  gen:
+    dao:
+      - link: "pgsql:postgres:Yw#Lwpak#525178@tcp(139.155.240.65:5432)/postgres"
+        jsonCase: "CamelLower"
+        removePrefix: "t_"
+  build:
+    name: "hiveify-core"
+    packSrc: "manifest/config"

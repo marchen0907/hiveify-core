@@ -1,6 +1,6 @@
 ## hiveify网盘后端
-* start `go run -ldflags="-X main.ENV_FILE=.env.dev" main.go`
-* build `go build -ldflags="-X main.ENV_FILE=.env.prod" main.go`
+* start `gf run main.go`
+* build `go build .`
 
 ## License
 
